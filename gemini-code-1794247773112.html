@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bloom - Ambient Life Sanctuary and Career Guidance for Youth">
+    <title>Bloom | Youth Sanctuary & Focus Hub</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="brand">
+                <h2>BLOOM</h2>
+                <p>Youth Sanctuary</p>
+            </div>
+            <nav class="nav-menu">
+                <button class="nav-btn active" data-tab="dashboard">
+                    <span class="icon">⚡</span> Dashboard
+                </button>
+                <button class="nav-btn" data-tab="learn">
+                    <span class="icon">📚</span> Learn & Grow
+                </button>
+                <button class="nav-btn" data-tab="advisor">
+                    <span class="icon">🤖</span> Micro-Advisor
+                </button>
+            </nav>
+            <div class="audio-widget">
+                <button id="lofiToggle" class="lofi-btn">
+                    <span id="audioIcon">🎵</span> Play Lofi Ambient
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Header Controls & Dynamic Time Vibe -->
+            <header class="top-header">
+                <div class="quote-container">
+                    <blockquote id="heroQuote">"It's not who I am underneath, but what I do that defines me." — Batman Begins</blockquote>
+                </div>
+                <div class="controls">
+                    <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle Theme">
+                        <span id="themeIcon">☀️</span> <span id="themeLabel">Day Mode</span>
+                    </button>
+                </div>
+            </header>
+
+            <!-- TAB 1: DASHBOARD -->
+            <section id="dashboard" class="tab-content active">
+                <div class="section-title">
+                    <h1>Focus Dashboard</h1>
+                    <p>Organize your day with low cognitive noise.</p>
+                </div>
+
+                <div class="task-input-card">
+                    <h3>Add New Task</h3>
+                    <form id="taskForm" class="task-form">
+                        <input type="text" id="taskInput" placeholder="What needs to get done?" required>
+                        <select id="prioritySelect">
+                            <option value="high">High Priority</option>
+                            <option value="medium" selected>Medium Priority</option>
+                            <option value="low">Low Priority</option>
+                        </select>
+                        <button type="submit" class="btn-primary">Add Task</button>
+                    </form>
+                </div>
+
+                <div class="task-boards">
+                    <div class="task-column high-priority">
+                        <h3>🔴 High Priority</h3>
+                        <ul id="highTaskList" class="task-list"></ul>
+                    </div>
+                    <div class="task-column medium-priority">
+                        <h3>🟡 Medium Priority</h3>
+                        <ul id="mediumTaskList" class="task-list"></ul>
+                    </div>
+                    <div class="task-column low-priority">
+                        <h3>🟢 Low Priority</h3>
+                        <ul id="lowTaskList" class="task-list"></ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TAB 2: LEARN PLATFORM -->
+            <section id="learn" class="tab-content">
+                <div class="section-title">
+                    <h1>Learn & Growth Hub</h1>
+                    <p>Practical knowledge and instant destressing tools.</p>
+                </div>
+
+                <div class="topic-filters">
+                    <button class="filter-btn active" data-category="all">All Topics</button>
+                    <button class="filter-btn" data-category="career">Career</button>
+                    <button class="filter-btn" data-category="personal">Personal</button>
+                    <button class="filter-btn" data-category="emotional">Emotional</button>
+                    <button class="filter-btn" data-category="physical">Physical</button>
+                </div>
+
+                <div id="learnGrid" class="learn-grid">
+                    <!-- Dynamic Articles/Activities Loaded Here -->
+                </div>
+            </section>
+
+            <!-- TAB 3: MICRO-ADVISOR (AI CHATBOT) -->
+            <section id="advisor" class="tab-content">
+                <div class="section-title">
+                    <h1>Micro-Advisor</h1>
+                    <p>Always-on, low-stress advice for career, tech, and life balance.</p>
+                </div>
+
+                <div class="chat-container">
+                    <div id="chatMessages" class="chat-messages">
+                        <div class="message bot">
+                            <div class="msg-bubble">
+                                Hey there. I'm your Micro-Advisor. How are you holding up today? Ask me anything about handling burnout, prepping for tech certifications, or managing work and school.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chat-input-area">
+                        <form id="chatForm">
+                            <input type="text" id="chatInput" placeholder="Ask for advice or express how you're feeling..." required autocomplete="off">
+                            <button type="submit" class="btn-primary">Send</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
